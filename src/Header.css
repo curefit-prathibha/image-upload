@@ -1,0 +1,14 @@
+/* Header.css */
+.header {
+    display: flex;
+    align-items: center; /* Center align items vertically */
+    background-color: black;
+    padding: 10px 20px; /* Add some padding for better appearance */
+  }
+  
+  .header-logo {
+    height: 50px; /* Adjust the height as needed */
+    margin-left: 20px; /* Add margin to ensure it's not too close to the edge */
+    margin-top: 5px;
+  }
+  
