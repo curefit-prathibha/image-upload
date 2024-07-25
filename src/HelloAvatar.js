@@ -10,6 +10,9 @@ import { EffectComposer, TiltShift2 } from "@react-three/postprocessing"
 // import ManModel from "./MAN"
 // import MyModel from "./MANN"
 import ModelWaving from './MAN_WAVING'
+import DancingModel from './DANCE'
+import LayingModel from './LAYING_DOWN'
+import FlexModel from './FLEX'
 import { PlaneBufferGeometry, Mesh, MeshBasicMaterial } from 'three';
 
 // function Model(props) {
@@ -36,7 +39,10 @@ const HelloAvatar = () => (
     <directionalLight position={[-5, 5, 5]} castShadow shadow-mapSize={1024} />
     {/* <ScrollControls damping={0.2} maxSpeed={0.5} pages={2}> */}
     <group position={[0, -1, 0]} scale={0.9}>
-        <ModelWaving />
+        {/* <DancingModel /> */}
+        <LayingModel />
+        {/* <ModelWaving /> */}
+        {/* <FlexModel /> */}
         </group>
       {/* <Model /> */}
       {/* <Model /> */}

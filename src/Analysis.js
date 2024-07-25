@@ -34,7 +34,7 @@ const Analysis = () => {
   return (
     <>
       <Header />
-      <div>
+      <div style={{textAlign: 'center'}}>
         {/* <h1>Analysis Results</h1>
         <h2>Evaluated areas:</h2> */}
         {/* <div className="image-container">
@@ -51,7 +51,9 @@ const Analysis = () => {
             <img src={thighsImg} alt="Thighs" className="analysis-image" />
           </figure>
         </div> */}
+        <h2>Here, Meet your avatar!</h2>
         <div style={{width: '100vw', height: '100vh'}}>
+        <div className="speech">GeeksForGeeks</div>
         <HelloAvatar />
         </div>
         {showText && <h2 className="final-text">YOUR AVATAR</h2>}
