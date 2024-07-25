@@ -57,7 +57,12 @@ const App = () => {
 
   const handleUseImage = async () => {
     if (promptMessage === 'Please click your front angle') {
-      setPromptMessage('Please click your side angle');
+      setPromptMessage('Please click your left angle');
+      setImage(null);
+      setCameraVisible(true);
+      setIsCameraImage(false);
+    } else if (promptMessage === 'Please click your left angle') {
+      setPromptMessage('Please click your right angle');
       setImage(null);
       setCameraVisible(true);
       setIsCameraImage(false);
