@@ -27,7 +27,7 @@ const Analysis = () => {
     <>
       <Header />
       <div style={{ textAlign: 'center' }}>
-        <h2>Hey There! Meet Your Avatar</h2> {/* Display the name here */}
+        <h2>Meet Your Avatar</h2> {/* Display the name here */}
         <button onClick={handleWorkoutsCompletedButtonClick} style={buttonStyle}>
             Next
           </button>

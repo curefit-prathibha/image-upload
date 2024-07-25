@@ -27,7 +27,7 @@ const WorkoutsCompleted = () => {
     <>
       <Header />
       <div style={{textAlign: 'center'}}>
-        <h2>Dancing!</h2>
+        <h2>Somebody's on a roll! You have been consistent for 2 weeks.</h2>
         <button onClick={handleWorkoutsNotCompletedButtonClick} style={buttonStyle}>
             Next
           </button>

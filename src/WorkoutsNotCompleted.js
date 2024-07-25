@@ -29,7 +29,7 @@ const WorkoutsNotCompleted = () => {
     <>
       <Header />
       <div style={{textAlign: 'center'}}>
-        <h2>Lying down!</h2>
+        <h2>{`\u{1F622}`}Barbaad hoo gaya mai!</h2>
         <button onClick={handleWorkoutsFlexingButtonClick} style={buttonStyle}>
             Next
           </button>

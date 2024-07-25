@@ -27,7 +27,7 @@ const WorkoutsFlexing = () => {
     <>
       <Header />
       <div style={{textAlign: 'center'}}>
-        <h2>Flexing!</h2>
+        <h2>Look who is making gains</h2>
         <button onClick={handleHelloButtonClick} style={buttonStyle}>
             Next
           </button>
