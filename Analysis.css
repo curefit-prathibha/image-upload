@@ -1,0 +1,58 @@
+.analysis-page {
+    text-align: center;
+    padding: 20px;
+    margin-top: 60px;
+    background: rgba(255, 255, 255, 0.6); /* Single translucent white background */
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    max-width: 80%; /* Limit the width of the content */
+    margin-left: auto;
+    margin-right: auto;
+  }
+  
+  .image-container {
+    position: relative; /* Positioning context for absolute positioning */
+    width: 100%; /* Full width */
+    height: 400px; /* Match the height of the images */
+    display: flex; /* Use flexbox to center images */
+    align-items: center; /* Vertically center items */
+    justify-content: center; /* Horizontally center items */
+    overflow: hidden; /* Hide overflowing content */
+  }
+  
+  .image-item {
+    position: absolute; /* Position each image absolutely within the container */
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    opacity: 0; /* Initially hide images */
+    transition: opacity 0.2s; /* Smooth transition for blinking effect */
+  }
+  
+  .blink {
+    opacity: 1; /* Show image */
+  }
+  
+  .analysis-image {
+    max-height: 100%; /* Make sure the image does not exceed container height */
+    max-width: 100%; /* Make sure the image does not exceed container width */
+    object-fit: cover; /* Ensure the image covers the container without distortion */
+  }
+  
+  figcaption {
+    margin-top: 8px; /* Adjust spacing between image and text */
+    font-size: 1rem; /* Adjust font size if needed */
+    color: #333; /* Adjust text color if needed */
+  }
+  
+  .final-text {
+    margin-top: 50px;
+    font-size: 2rem;
+    font-weight: bold;
+    color: #000;
+  }
+  
