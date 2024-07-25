@@ -1,0 +1,41 @@
+.modal {
+    position: fixed;
+    z-index: 1;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.6); /* Dark background with opacity */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  
+  .modal-content {
+    background-color: white;
+    padding: 20px;
+    border-radius: 5px;
+    text-align: center;
+    width: 90%; /* Adjust width to fit the display */
+    height: 80%; /* Adjust height to fit the display */
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    overflow-y: auto;
+    font-size: xx-large; /* Add scroll if content overflows */
+  }
+  
+  .close-button {
+    height: 60px;
+    font-size: large;
+    width: 150px;
+    margin-top: 20px;
+    /* padding: 10px 20px; */
+    cursor: pointer;
+    border: none;
+    border-radius: 5px;
+    background-color: #007BFF;
+    color: white;
+  }
+  

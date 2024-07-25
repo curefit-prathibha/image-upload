@@ -1,57 +1,63 @@
 import React, { useEffect, useState } from 'react';
-import './Analysis.css'; // Optional: Create a CSS file for styling the analysis page
+import './Analysis.css';
 import Header from './Header';
-import HelloAvatar from './HelloAvatar'
+import HelloAvatar from './HelloAvatar';
 import DancingAvatar from './DancingAvatar';
-import { useNavigate, useLocation } from 'react-router-dom'; // Import useLocation
-
+import { useNavigate, useLocation } from 'react-router-dom';
+import Modal from './Modal'; // Import the Modal component
 
 const WorkoutsCompleted = () => {
-  const [showMessage, setShowMessage] = useState(false)
+  const [showMessage, setShowMessage] = useState(false);
+  const [showModal, setShowModal] = useState(false); // State for modal visibility
 
   useEffect(() => {
     setTimeout(() => {
-      setShowMessage(true)
-    }, 1000)
-  }, [])
-    const navigate = useNavigate(); // Initialize navigate function
-  const location = useLocation(); // Retrieve the location object
-  const { userName } = location.state || {}; // Extract the userName from the state
+      setShowMessage(true);
+    }, 1000);
+  }, []);
 
+  const navigate = useNavigate();
+  const location = useLocation();
+  const { userName } = location.state || {};
 
-    const handleWorkoutsNotCompletedButtonClick = () => {
-        navigate('/workouts_not_completed'); // Navigate to the "workouts_not_completed" route
-      };
+  const handleWorkoutsNotCompletedButtonClick = () => {
+    setShowModal(true);
+  };
+
+  const handleCloseModal = () => {
+    setShowModal(false);
+    navigate('/workouts_not_completed');
+  };
 
   return (
     <>
       <Header />
-      <div style={{textAlign: 'center'}}>
+      <div style={{ textAlign: 'center' }}>
         <h2>Somebody's on a roll! You have been consistent for 2 weeks.</h2>
         <button onClick={handleWorkoutsNotCompletedButtonClick} style={buttonStyle}>
-            Next
-          </button>
-        <div style={{width: '100vw', height: '100vh'}}>
-        {showMessage && <div className="speech">Well done Vikas!</div>}
-        <DancingAvatar />
+          Next
+        </button>
+        <div style={{ width: '100vw', height: '100vh' }}>
+          {showMessage && <div className="speech">Well done {userName || 'Guest'}!</div>}
+          <DancingAvatar />
         </div>
-        {/* {showText && <h2 className="final-text">YOUR AVATAR</h2>} */}
       </div>
+      <Modal show={showModal} message="Vikas misses workouts for the next week." onClose={handleCloseModal} />
     </>
   );
 };
 
 // Inline style for the button (optional)
 const buttonStyle = {
-    float: "right",
-    marginTop: '20px',
-    padding: '10px 20px',
-    fontSize: '16px',
-    cursor: 'pointer',
-    border: 'none',
-    borderRadius: '5px',
-    color: 'black',
-    backgroundColor: 'white',
-    //color: 'white',
-  };
+  float: 'right',
+  marginTop: '20px',
+  padding: '10px 20px',
+  fontSize: '16px',
+  cursor: 'pointer',
+  border: 'none',
+  borderRadius: '5px',
+  color: 'black',
+  backgroundColor: 'white',
+};
+
 export default WorkoutsCompleted;

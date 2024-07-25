@@ -1,48 +1,54 @@
 import React from 'react';
-import { useNavigate, useLocation } from 'react-router-dom'; // Import useLocation
-import './Analysis.css'; // Optional: Create a CSS file for styling the analysis page
+import { useNavigate, useLocation } from 'react-router-dom';
+import './Analysis.css';
 import Header from './Header';
 import HelloAvatar from './HelloAvatar';
+import Modal from './Modal';
 
 const Analysis = () => {
-  const navigate = useNavigate(); // Initialize navigate function
-  const location = useLocation(); // Retrieve the location object
-  const { userName } = location.state || {}; // Extract the userName from the state
+  const navigate = useNavigate();
+  const location = useLocation();
+  const { userName } = location.state || {};
+  const [showModal, setShowModal] = React.useState(false);
 
   const handleWorkoutsCompletedButtonClick = () => {
-    navigate('/workouts_completed'); // Navigate to the "workouts_completed" route
+    setShowModal(true);
   };
 
-  const [showMessage, setShowMessage] = React.useState(false)
+  const handleCloseModal = () => {
+    setShowModal(false);
+    navigate('/workouts_completed');
+  };
+
+  const [showMessage, setShowMessage] = React.useState(false);
 
   React.useEffect(() => {
     setTimeout(() => {
-      setShowMessage(true)
-    }, 1000)
-  }, [])
-
-  // const { userName } = location.state || {}; // Retrieve the name from the state
+      setShowMessage(true);
+    }, 1000);
+  }, []);
 
   return (
     <>
       <Header />
       <div style={{ textAlign: 'center' }}>
-        <h2>Meet Your Avatar</h2> {/* Display the name here */}
+        <h2>Meet Your Avatar</h2>
         <button onClick={handleWorkoutsCompletedButtonClick} style={buttonStyle}>
-            Next
-          </button>
+          Next
+        </button>
         <div style={{ width: '100vw', height: '100vh' }}>
-          {showMessage && <div className="speech">Hi Vikas!</div>}
+          {showMessage && <div className="speech">Hi {userName || 'Guest'}!</div>}
           <HelloAvatar />
         </div>
       </div>
+      <Modal show={showModal} message="Vikas attends 8 classes in next two weeks..." onClose={handleCloseModal} />
     </>
   );
 };
 
 // Inline style for the button (optional)
 const buttonStyle = {
-  float: "right",
+  float: 'right',
   marginTop: '20px',
   padding: '10px 20px',
   fontSize: '16px',
@@ -51,6 +57,6 @@ const buttonStyle = {
   borderRadius: '5px',
   color: 'black',
   backgroundColor: 'white',
-  //color: 'white',
 };
+
 export default Analysis;

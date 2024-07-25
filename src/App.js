@@ -12,6 +12,7 @@ import Header from './Header';
 import WorkoutsCompleted from './WorkoutsCompleted';
 import WorkoutsNotCompleted from './WorkoutsNotCompleted';
 import WorkoutsFlexing from './WorkoutsFlexing';
+import LastPage from './LastPage';
 
 const App = () => {
   const [image, setImage] = useState(null);
@@ -243,6 +244,7 @@ const AppWrapper = () => (
       <Route path="/workouts_completed" element={<WorkoutsCompleted />} />
       <Route path="/workouts_not_completed" element={<WorkoutsNotCompleted />} />
       <Route path="/workouts_flexing" element={<WorkoutsFlexing />} />
+      <Route path="/end" element={<LastPage />} />
     </Routes>
   </Router>
 );
