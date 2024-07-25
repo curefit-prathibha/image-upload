@@ -38,7 +38,7 @@ const LayingAvatar = () => (
     <ambientLight color={0xffffff} intensity={3} />
     <directionalLight position={[-5, 5, 5]} castShadow shadow-mapSize={1024} />
     {/* <ScrollControls damping={0.2} maxSpeed={0.5} pages={2}> */}
-    <group position={[0, -1, 0]} scale={0.9}>
+    <group position={[0, 1, 0]} scale={0.9}>
         {/* <DancingModel /> */}
         <LayingModel />
         {/* <ModelWaving /> */}

@@ -5,14 +5,20 @@ import HelloAvatar from './HelloAvatar'
 import DancingAvatar from './DancingAvatar';
 
 const WorkoutsCompleted = () => {
+  const [showMessage, setShowMessage] = useState(false)
 
+  useEffect(() => {
+    setTimeout(() => {
+      setShowMessage(true)
+    }, 3000)
+  }, [])
   return (
     <>
       <Header />
       <div style={{textAlign: 'center'}}>
         <h2>Dancing!</h2>
         <div style={{width: '100vw', height: '100vh'}}>
-        <div className="speech">GeeksForGeeks</div>
+        {showMessage && <div className="speech">Well done Vikas!</div>}
         <DancingAvatar />
         </div>
         {/* {showText && <h2 className="final-text">YOUR AVATAR</h2>} */}

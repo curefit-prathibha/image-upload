@@ -7,14 +7,20 @@ import LayingModel from './LAYING_DOWN';
 import LayingAvatar from './LayingAvatar';
 
 const WorkoutsNotCompleted = () => {
+  const [showMessage, setShowMessage] = useState(false)
 
+  useEffect(() => {
+    setTimeout(() => {
+      setShowMessage(true)
+    }, 3000)
+  }, [])
   return (
     <>
       <Header />
       <div style={{textAlign: 'center'}}>
         <h2>Lying down!</h2>
         <div style={{width: '100vw', height: '100vh'}}>
-        <div className="speech">GeeksForGeeks</div>
+        {showMessage && <div className="speech">Lazy!!</div>}
         <LayingAvatar />
         </div>
       </div>

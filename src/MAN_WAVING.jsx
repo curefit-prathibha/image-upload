@@ -27,7 +27,7 @@ const ModelWaving = (props) => {
   return (
     <group ref={group} {...props} dispose={null}>
       <group name="Scene">
-        <group name="Armature" rotation={[Math.PI / 1.8, 0, 0]} scale={0.4}>
+        <group name="Armature" rotation={[Math.PI / 1.6, 0, 0]} scale={0.4}>
           <primitive object={nodes.mixamorigHips} />
           <skinnedMesh castShadow name="dushka_2_kr_1_metal_0001" geometry={nodes.dushka_2_kr_1_metal_0001.geometry} material={materials['Material.041']} skeleton={nodes.dushka_2_kr_1_metal_0001.skeleton} />
           <skinnedMesh castShadow name="Object_15001_mesh_4001" geometry={nodes.Object_15001_mesh_4001.geometry} material={materials['Material.037']} skeleton={nodes.Object_15001_mesh_4001.skeleton} />

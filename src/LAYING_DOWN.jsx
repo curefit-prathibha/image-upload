@@ -21,7 +21,7 @@ const LayingModel = (props) => {
   return (
     <group ref={group} {...props} dispose={null}>
       <group name="Scene">
-        <group name="Armature001" position={[0.454, 0, 0]} rotation={[Math.PI / 2, 0, 0]} scale={0.4}>
+        <group name="Armature001" position={[0.454, 0, 0]} rotation={[Math.PI / 1, 0, -1]} scale={0.4}>
           <primitive object={nodes.mixamorigHips} />
           <skinnedMesh name="dushka_2_kr_1_metal_0002" geometry={nodes.dushka_2_kr_1_metal_0002.geometry} material={materials['Material.009']} skeleton={nodes.dushka_2_kr_1_metal_0002.skeleton} />
           <skinnedMesh name="Object_15001_mesh_4002" geometry={nodes.Object_15001_mesh_4002.geometry} material={materials['Material.001']} skeleton={nodes.Object_15001_mesh_4002.skeleton} />

@@ -21,7 +21,7 @@ const FlexModel = (props) => {
   return (
     <group ref={group} {...props} dispose={null}>
       <group name="Scene">
-        <group name="Armature" position={[-0.306, 0, 0]} rotation={[Math.PI / 2, 0, 0]} scale={1.191}>
+        <group name="Armature" position={[-0.306, 0, 0]} rotation={[Math.PI / 1.7, 0, 0]} scale={0.45}>
           <primitive object={nodes.mixamorigHips} />
           <skinnedMesh name="dushka_2_kr_1_metal_0001" geometry={nodes.dushka_2_kr_1_metal_0001.geometry} material={materials['Material.017']} skeleton={nodes.dushka_2_kr_1_metal_0001.skeleton} />
           <skinnedMesh name="Object_15001_mesh_4001" geometry={nodes.Object_15001_mesh_4001.geometry} material={materials['Material.016']} skeleton={nodes.Object_15001_mesh_4001.skeleton} />

@@ -1,5 +1,5 @@
 import React from 'react';
-import { useNavigate } from 'react-router-dom'; // Import useNavigate
+import { Route, useNavigate } from 'react-router-dom'; // Import useNavigate
 import './Analysis.css'; // Optional: Create a CSS file for styling the analysis page
 import Header from './Header';
 import HelloAvatar from './HelloAvatar';
@@ -19,6 +19,14 @@ const Analysis = () => {
     navigate('/workouts_flexing'); // Navigate to the "workouts_completed" route
   };
 
+  const [showMessage, setShowMessage] = React.useState(false)
+
+  React.useEffect(() => {
+    setTimeout(() => {
+      setShowMessage(true)
+    }, 3000)
+  }, [])
+
   // const { userName } = location.state || {}; // Retrieve the name from the state
 
   return (
@@ -36,7 +44,7 @@ const Analysis = () => {
             Flex muscles
           </button>
         <div style={{ width: '100vw', height: '100vh' }}>
-          <div className="speech">Say hi</div>
+          {showMessage && <div className="speech">Hi Vikas!</div>}
           <HelloAvatar />
         </div>
       </div>

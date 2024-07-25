@@ -21,7 +21,7 @@ import { SkeletonUtils } from 'three-stdlib'
   return (
     <group ref={group} {...props} dispose={null}>
       <group name="Scene">
-        <group name="Armature001" rotation={[Math.PI / 1.8, 0, 0]} scale={0.8}>
+        <group name="Armature001" rotation={[Math.PI / 1.8, 0, 0]} scale={0.4}>
           <primitive object={nodes.mixamorigHips} />
           <skinnedMesh name="dushka_2_kr_1_metal_0002" geometry={nodes.dushka_2_kr_1_metal_0002.geometry} material={materials['Material.032']} skeleton={nodes.dushka_2_kr_1_metal_0002.skeleton} />
           <skinnedMesh name="Object_15001_mesh_4002" geometry={nodes.Object_15001_mesh_4002.geometry} material={materials['Material.028']} skeleton={nodes.Object_15001_mesh_4002.skeleton} />
