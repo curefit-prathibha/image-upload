@@ -14,7 +14,7 @@ const FlexModel = (props) => {
   const {actions, names} = useAnimations(animations, group)
   console.log("names", names)
   React.useEffect(() => {
-    actions[names[0]].reset().fadeIn(0.5).play()
+    actions[names[1]].reset().fadeIn(0.5).play()
     // actions[names[1]].reset().fadeIn(1.5).play()
     // actions[names[2]].reset().fadeIn(2.5).play()
   }, [])

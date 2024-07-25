@@ -9,6 +9,9 @@ import womanDeadlift from './weight_lifting_woman.gif';
 import manDumbell from './man_dumbell.gif';
 import Analysis from './Analysis'; // Import the Analysis component
 import Header from './Header';
+import WorkoutsCompleted from './WorkoutsCompleted';
+import WorkoutsNotCompleted from './WorkoutsNotCompleted';
+import WorkoutsFlexing from './WorkoutsFlexing';
 
 const App = () => {
   const [image, setImage] = useState(null);
@@ -21,6 +24,7 @@ const App = () => {
   const [doneMessageVisible, setDoneMessageVisible] = useState(false);
   const [promptMessage, setPromptMessage] = useState('Please click your front angle');
   const [modalGif, setModalGif] = useState(manBenchPress);
+  const [name, setName] = useState(''); // Add state for name input
 
   const webcamRef = useRef(null);
   const navigate = useNavigate();
@@ -67,6 +71,8 @@ const App = () => {
         const highlighted = await detectAndHighlightBiceps(imageSrc);
         setHighlightedImage(highlighted);
       }
+      // Pass the name state to the Analysis page
+      navigate('/analysis', { state: { userName: name } });
     }
   };
 
@@ -93,7 +99,7 @@ const App = () => {
         setTimeout(() => {
           setShowModal(false);
           setDoneMessageVisible(true);
-          navigate('/analysis');
+          navigate('/analysis', { state: { userName: name } }); // Pass the name state
         }, 1000);
       } else {
         setModalMessage(messages[messageIndex]);
@@ -148,15 +154,15 @@ const App = () => {
           <h1 className="gradient-text">Welcome aboard, let's get you started!</h1>
         </header>
         <div className="content">
-          <div className="upload-section">
+          <div className="input-section">
             <input
-              type="file"
-              accept="image/*"
-              onChange={handleImageUpload}
+              type="text"
+              placeholder="Please enter your name"
+              value={name}
+              onChange={(e) => setName(e.target.value)}
               disabled={!cameraVisible}
             />
           </div>
-          <h1 className='gradient-text'>OR</h1>
           {cameraVisible ? (
             <div className="camera-section">
               <div className="camera-prompt">
@@ -229,6 +235,9 @@ const AppWrapper = () => (
     <Routes>
       <Route path="/" element={<App />} />
       <Route path="/analysis" element={<Analysis />} />
+      <Route path="/workouts_completed" element={<WorkoutsCompleted />} />
+      <Route path="/workouts_not_completed" element={<WorkoutsNotCompleted />} />
+      <Route path="/workouts_flexing" element={<WorkoutsFlexing />} />
     </Routes>
   </Router>
 );

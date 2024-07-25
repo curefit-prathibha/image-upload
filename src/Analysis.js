@@ -1,65 +1,59 @@
-import React, { useEffect, useState } from 'react';
-import abdomenImg from './abdomen.jpeg';
-import bicepsImg from './biceps.avif';
-import shoulderImg from './shoulder.png';
-import thighsImg from './thighs.jpeg';
+import React from 'react';
+import { useNavigate } from 'react-router-dom'; // Import useNavigate
 import './Analysis.css'; // Optional: Create a CSS file for styling the analysis page
 import Header from './Header';
-import HelloAvatar from './HelloAvatar'
+import HelloAvatar from './HelloAvatar';
 
 const Analysis = () => {
-  const [showText, setShowText] = useState(false);
+  const navigate = useNavigate(); // Initialize navigate function
 
+  const handleWorkoutsCompletedButtonClick = () => {
+    navigate('/workouts_completed'); // Navigate to the "workouts_completed" route
+  };
 
-  useEffect(() => {
-    const imageItems = document.querySelectorAll('.image-item');
-    let currentIndex = 0;
+  const handleWorkoutsNotCompletedButtonClick = () => {
+    navigate('/workouts_not_completed'); // Navigate to the "workouts_completed" route
+  };
 
-    const blinkImages = () => {
-      if (currentIndex < imageItems.length) {
-        imageItems[currentIndex].classList.add('blink');
-        setTimeout(() => {
-          imageItems[currentIndex].classList.remove('blink');
-          currentIndex++;
-          blinkImages();
-        }, 1000); // Adjust the timing if needed
-      } else {
-        setShowText(true);
-      }
-    };
+  const handleWorkoutsFlexingButtonClick = () => {
+    navigate('/workouts_flexing'); // Navigate to the "workouts_completed" route
+  };
 
-    blinkImages();
-  }, []);
+  // const { userName } = location.state || {}; // Retrieve the name from the state
 
   return (
     <>
       <Header />
-      <div style={{textAlign: 'center'}}>
-        {/* <h1>Analysis Results</h1>
-        <h2>Evaluated areas:</h2> */}
-        {/* <div className="image-container">
-          <figure className="image-item">
-            <img src={abdomenImg} alt="Abdomen" className="analysis-image" />
-          </figure>
-          <figure className="image-item">
-            <img src={bicepsImg} alt="Biceps" className="analysis-image" />
-          </figure>
-          <figure className="image-item">
-            <img src={shoulderImg} alt="Shoulder" className="analysis-image" />
-          </figure>
-          <figure className="image-item">
-            <img src={thighsImg} alt="Thighs" className="analysis-image" />
-          </figure>
-        </div> */}
+      <div style={{ textAlign: 'center' }}>
         <h2>Here, Meet your avatar!</h2>
-        <div style={{width: '100vw', height: '100vh'}}>
-        <div className="speech">GeeksForGeeks</div>
-        <HelloAvatar />
+        <button onClick={handleWorkoutsCompletedButtonClick} style={buttonStyle}>
+            Go to Workouts Completed
+          </button>
+          <button onClick={handleWorkoutsNotCompletedButtonClick} style={buttonStyle}>
+            Don't workout
+          </button>
+          <button onClick={handleWorkoutsFlexingButtonClick} style={buttonStyle}>
+            Flex muscles
+          </button>
+        <div style={{ width: '100vw', height: '100vh' }}>
+          <div className="speech">Say hi</div>
+          <HelloAvatar />
         </div>
-        {showText && <h2 className="final-text">YOUR AVATAR</h2>}
       </div>
     </>
   );
+};
+
+// Inline style for the button (optional)
+const buttonStyle = {
+  marginTop: '20px',
+  padding: '10px 20px',
+  fontSize: '16px',
+  cursor: 'pointer',
+  border: 'none',
+  borderRadius: '5px',
+  backgroundColor: '#007bff',
+  color: 'white',
 };
 
 export default Analysis;

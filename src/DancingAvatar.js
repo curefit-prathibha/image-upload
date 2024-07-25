@@ -31,7 +31,7 @@ import { PlaneBufferGeometry, Mesh, MeshBasicMaterial } from 'three';
 //   )
 // }
 
-const HelloAvatar = () => (
+const DancingAvatar = () => (
   <Canvas shadows>
     {/* <color attach="background" args={["#f0f0f0"]} />
     <fog attach="fog" args={["#f0f0f0", 0, 20]} /> */}
@@ -39,9 +39,9 @@ const HelloAvatar = () => (
     <directionalLight position={[-5, 5, 5]} castShadow shadow-mapSize={1024} />
     {/* <ScrollControls damping={0.2} maxSpeed={0.5} pages={2}> */}
     <group position={[0, -1, 0]} scale={0.9}>
-        {/* <DancingModel /> */}
+        <DancingModel />
         {/* <LayingModel /> */}
-        <ModelWaving />
+        {/* <ModelWaving /> */}
         {/* <FlexModel /> */}
         </group>
       {/* <Model /> */}
@@ -59,4 +59,4 @@ const HelloAvatar = () => (
   </Canvas>
 )
 
-export default HelloAvatar
+export default DancingAvatar

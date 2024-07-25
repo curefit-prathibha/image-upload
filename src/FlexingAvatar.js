@@ -31,7 +31,7 @@ import { PlaneBufferGeometry, Mesh, MeshBasicMaterial } from 'three';
 //   )
 // }
 
-const HelloAvatar = () => (
+const FlexingAvatar = () => (
   <Canvas shadows>
     {/* <color attach="background" args={["#f0f0f0"]} />
     <fog attach="fog" args={["#f0f0f0", 0, 20]} /> */}
@@ -41,8 +41,8 @@ const HelloAvatar = () => (
     <group position={[0, -1, 0]} scale={0.9}>
         {/* <DancingModel /> */}
         {/* <LayingModel /> */}
-        <ModelWaving />
-        {/* <FlexModel /> */}
+        {/* <ModelWaving /> */}
+        <FlexModel />
         </group>
       {/* <Model /> */}
       {/* <Model /> */}
@@ -59,4 +59,4 @@ const HelloAvatar = () => (
   </Canvas>
 )
 
-export default HelloAvatar
+export default FlexingAvatar

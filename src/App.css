@@ -33,18 +33,27 @@ h1 {
 .preview-section {
   margin: 20px;
   width: 100%;
-  max-width: 400px;
+  max-width: 500px; /* Increased max-width */
   background: rgba(255, 255, 255, 0.8);
   padding: 20px;
   border-radius: 10px;
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
 }
 
-input[type='file'] {
+input[type='file'],
+input[type='text'] {
   padding: 10px;
   border: 2px solid #0c0b0c;
   border-radius: 5px;
   background: #fff;
+  width: 400px; /* Ensure input takes full width of container */
+  box-sizing: border-box; /* Include padding in the width */
+}
+
+input[type='text'] {
+  font-size: 1rem;
+  color: #333;
+  max-width: 600px; /* Increased width */
 }
 
 .webcam {
