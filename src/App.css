@@ -1,0 +1,76 @@
+body {
+  margin: 0;
+  font-family: 'Roboto', sans-serif;
+  background-color: #f7f7f7;
+  color: #333;
+}
+
+.App {
+  text-align: center;
+  padding: 20px;
+}
+
+.App-header {
+  background-color: #6200ea;
+  padding: 20px;
+  color: white;
+  border-radius: 10px;
+  margin-bottom: 20px;
+}
+
+h1 {
+  margin: 0;
+  font-size: 2.5rem;
+}
+
+.content {
+  display: flex;
+  justify-content: space-around;
+  flex-wrap: wrap;
+}
+
+.upload-section, .camera-section {
+  margin: 20px;
+}
+
+input[type="file"] {
+  padding: 10px;
+  border: 2px solid #6200ea;
+  border-radius: 5px;
+  background-color: white;
+  color: #6200ea;
+  cursor: pointer;
+}
+
+.webcam {
+  border: 2px solid #6200ea;
+  border-radius: 10px;
+  margin-top: 10px;
+}
+
+.capture-button {
+  display: inline-block;
+  padding: 10px 20px;
+  margin-top: 10px;
+  font-size: 1rem;
+  color: white;
+  background-color: #6200ea;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background-color 0.3s;
+}
+
+.capture-button:hover {
+  background-color: #3700b3;
+}
+
+.preview-section {
+  margin-top: 20px;
+}
+
+.preview-image {
+  max-width: 100%;
+  border: 2px solid #6200ea;
+  border-radius: 10px;
+}
