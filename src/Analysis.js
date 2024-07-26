@@ -37,7 +37,7 @@ const Analysis = () => {
           Next
         </button>
         <div style={{ width: '100vw', height: '100vh' }}>
-          {showMessage && <div className="speech">Hi {userName || 'Guest'}!</div>}
+          {showMessage && <div className="speech">Hi {userName || 'Vikas'}!</div>}
           <HelloAvatar />
         </div>
       </div>

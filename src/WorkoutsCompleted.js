@@ -38,7 +38,7 @@ const WorkoutsCompleted = () => {
           Next
         </button>
         <div style={{ width: '100vw', height: '100vh' }}>
-          {showMessage && <div className="speech">Well done {userName || 'Guest'}!</div>}
+          {showMessage && <div className="speech">Well done {userName || 'Vikas'}!</div>}
           <DancingAvatar />
         </div>
       </div>
